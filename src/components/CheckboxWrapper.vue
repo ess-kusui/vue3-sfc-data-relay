@@ -15,17 +15,17 @@ import CheckboxItem from './CheckboxItem.vue';
 import { computed, toRefs } from 'vue';
 
 const props = defineProps({
-  modelValue: null,
+  item: null,
   label: null,
   nativeValue: null,
   input: () => {},
 });
-const { modelValue, label, nativeValue, input } = toRefs(props);
-const emit = defineEmits(['update:modelValue']);
+const { item, label, nativeValue, input } = toRefs(props);
+const emit = defineEmits(['update:item']);
 const localValue = computed({
-  get: () => modelValue.value,
+  get: () => item.value,
   set: (value) => {
-    emit('update:modelValue', value);
+    emit('update:item', value);
   },
 });
 </script>

@@ -28,7 +28,7 @@ const input = (value) => console.log(value);
     <CheckboxWrapper
       v-for="item in items"
       :key="item.id"
-      v-model="checkList"
+      v-model:item="checkList"
       :label="item.label"
       :nativeValue="item"
       @input="input"
